@@ -1,0 +1,70 @@
+Ans 1:
+    Yes we can overload the method with same return type .
+       Code is given as under 
+       import java.util.*;     //import package
+     class Acad    
+     {     
+    	 public int sum(int a,int b)     // method sum 1
+    	 {
+    		 int sum = a+b;                 //perform sum of two number
+    		 
+    		 return sum;                 //return statement
+    	 }
+    	 public int sum(int a,int b,int c)       // 2 method overloading with same name and different signature
+    	 {                                        //Both sum  method has same return type int 
+    		 int sum = a+b+c;
+    		 
+    		 return sum ;                    //return statement
+    	 }
+         public static void main(String []args)     //main method
+         {
+        	 Scanner sc = new Scanner(System.in);
+        	int x = sc.nextInt();        //input numbers 
+        	int y = sc.nextInt();
+        	int z = sc.nextInt();
+        	Acad ac = new Acad();   //create object of class
+        	System.out.println(ac.sum(x, y));         //calling method 1
+        	System.out.println(ac.sum(x,y,z));       // calling method 2
+        	
+        	
+       }   
+     }
+     
+     Ans 2:
+        import java.util.*;     //import package
+     class Acad    
+     { 
+         public static void main(String []args)        //main method
+         {   
+        	 int temp=0;
+        	 Scanner sc = new Scanner(System.in);
+        	 System.out.println("Enter the number of element u wants to enter in your array");
+        	int n = sc.nextInt();   //input number of elements in array
+        	int a[] = new int[n];   //array declaration 
+        	for(int i=0;i<n;i++)
+        	{
+        		a[i] = sc.nextInt();     //input array elements 
+        	}
+        	for (int i = 0; i < n; i++)       //first loop for iterate the array elements
+            {
+                for (int j = i + 1; j < n; j++)    //secong loop for compare the values 
+                {
+                    if (a[i] < a[j])          //condition for sorting the array in descending order 
+                    {
+                        temp = a[i];          //swapping the elements 
+                        a[i] = a[j];
+                        a[j] = temp;
+                    }
+                }
+            }
+            System.out.print("Descending Order:");
+            for (int i = 0; i < n - 1; i++) 
+            {
+                System.out.print(a[i] + ",");       //print array 
+            }
+            System.out.print(a[n - 1]);
+        }
+    
+        	
+       }   
+     
